@@ -8,11 +8,22 @@ body{
   background: #dddddd;
 }
 .container{
-  width: 800px;
-  background: white;
+  width: 900px;
   border-radius: 7px;
   box-shadow: 0 0 17px rgb(95, 95, 95);
   margin: 50px auto;
+  background: #f5f5f5;
+}
+.error{
+  color: red;
+}
+
+.white{
+  background: white;
+  border-radius: 7px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 .main{
   padding: 10px;
@@ -24,7 +35,6 @@ body{
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid red;
 }
 .temperature{
   font-size: 33px;
@@ -34,9 +44,32 @@ body{
   width: 70%;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(255, 118, 118);
 }
 .center_right{
   display: flex;
   justify-content: space-between;
+}
+.center-box{
+  width: 180px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.p{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: end;
+}
+
+
+.bottom_right{
+  display: flex;
+  justify-content: end;
+}
+.span:nth-child(1){
+  color: rgb(0, 223, 0);
+}
+.span{
+  padding: 5px;
+  font-size: 22px;
 }
