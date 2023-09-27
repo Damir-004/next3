@@ -49,15 +49,16 @@ const Weather = () => {
       
       <div className='main'>
         <div className='left white'>
-          <h1>{name}</h1>
+          <h1>{name}, {sys.country}</h1>
           <span>{description}</span>
           <img src={`https://openweathermap.org/img/wn/${icon}.png`} alt='Weather Icon' />
           <div className='temperature'>{Math.round(main.temp - 273.15)}°C</div>
+          <div className='temperature'>{Math.round(((main.temp - 273.15)*1.8)+32)}°F</div>
         </div>
 
         <div className='right'>
           <div className='top_right main'>
-            <div> {format(new Date(), 'dd MMMM yyyy HH:mm')}</div>
+            <div> {format(new Date(), 'dd MMMM yyyy HH:mm')} / {format(new Date(), 'hh:mm')} PM</div>
             <form onSubmit={handleSearch}>
               <input
                 type='text'
@@ -78,6 +79,7 @@ const Weather = () => {
               <div className='white center-box'>
                 <img width='70px' src='https://cdn-icons-png.flaticon.com/128/1527/1527248.png'/>
                 <p className='p'><span>Visibility</span> {Math.round(visibility / 1000)} <span>km</span></p>
+                <p className='p'><span>Visibility</span> {Math.round(visibility / 1609)} <span>miles</span></p>
               </div>
             </div>
             <div className='center-center_right'>
@@ -88,7 +90,8 @@ const Weather = () => {
               <div className='white center-box'>
                 <span className='sun'/>
                 <img width='70px' src='https://cdn-icons-png.flaticon.com/128/287/287667.png'/>
-                <p className='p'><span>Sunrise</span> {format(new Date(sys.sunrise * 1000), 'HH:mm')}</p>
+                {<p className='p'><span>Sunrise</span> {format(new Date(sys.sunrise * 1000), 'HH:mm')}</p>}:{
+                <p className='p'><span>Sunrise</span> {format(new Date(sys.sunrise * 1000), 'hh:mm')}<span>AM</span></p>}
               </div>
             </div>
             <div className='center-bottom_right'>
@@ -99,6 +102,8 @@ const Weather = () => {
               <div className='white center-box'>
                 <img width='70px' src='https://cdn-icons-png.flaticon.com/128/287/287668.png'/>
                 <p className='p'><span>Sunset</span> {format(new Date(sys.sunset * 1000), 'HH:mm')}</p>
+
+                <p className='p'>{format(new Date(sys.sunset * 1000), 'hh:mm')}PM</p>
               </div>
             </div>
           </div>
