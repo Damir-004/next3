@@ -17,7 +17,6 @@ body{
 .error{
   color: red;
 }
-
 .white{
   background: white;
   border-radius: 7px;
@@ -44,13 +43,14 @@ body{
   width: 70%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 .center_right{
   display: flex;
   justify-content: space-between;
 }
 .center-box{
-  width: 180px;
+  width: 200px;
   height: 100px;
   margin-bottom: 10px;
 }
@@ -60,7 +60,6 @@ body{
   justify-content: space-around;
   text-align: end;
 }
-
 
 .bottom_right{
   display: flex;
